@@ -11,11 +11,12 @@ public class RocketScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(0f, velocityMagnitude);
-        Vector2 v = rb.velocity;
-        float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //rb.velocity = new Vector2(0f, velocityMagnitude);
+        //rb.velocity = (transform.rotation * Vector3.forward) * velocityMagnitude;
+        rb.velocity = transform.up.normalized * velocityMagnitude;
+        Debug.Log(rb.velocity);
     }
+
 
     // Update is called once per frame
     void Update()
@@ -26,7 +27,6 @@ public class RocketScript : MonoBehaviour
     private void FixedUpdate()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        Debug.Log(players.Length);
         GameObject nearestPlayer = players[0];
         float minDist = (nearestPlayer.transform.position - transform.position).magnitude;
         foreach(GameObject p in players)
