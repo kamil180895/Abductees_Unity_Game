@@ -180,3 +180,6 @@ MonoBehaviour:
   moveSpeed: 10
   maxVelocity: 7
   jumpSpeed: 8
+  bullet: {fileID: 3147580312161954536, guid: 142f6696246329240bd4193879da193e, type: 3}
+  maxProjectiles: 3
+  gunDelayTime: 0.5

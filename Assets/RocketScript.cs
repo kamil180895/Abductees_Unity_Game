@@ -45,7 +45,7 @@ public class RocketScript : MonoBehaviour
 
         Vector2 v = rb.velocity;
         float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
