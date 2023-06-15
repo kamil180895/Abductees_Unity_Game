@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
+
+
+
 
 public class PlayerScript : MonoBehaviour
 {
@@ -32,6 +36,11 @@ public class PlayerScript : MonoBehaviour
         distToGround = GetComponent<BoxCollider2D>().bounds.extents.y;
         playerDirection = PlayerDirection.RIGHT;
         currentProjetiles = 0;
+    }
+
+    private void Awake()
+    {
+        GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard", Keyboard.current);
     }
 
     void Update()
