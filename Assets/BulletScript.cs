@@ -27,5 +27,9 @@ public class BulletScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(this.gameObject);
+        if(collision.gameObject.tag.Equals("Alien"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
