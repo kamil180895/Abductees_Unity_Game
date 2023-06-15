@@ -41,6 +41,7 @@ public class PlayerScript : MonoBehaviour
     private void Awake()
     {
         GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard", Keyboard.current);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Wall"), LayerMask.NameToLayer("Wall"));
     }
 
     void Update()
@@ -115,5 +116,24 @@ public class PlayerScript : MonoBehaviour
             GameObject instance = Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, rotZ));
             Physics2D.IgnoreCollision(instance.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
+    }
+
+    void OnUse()
+    {
+        GameObject[] usables = GameObject.FindGameObjectsWithTag("Usable");
+        GameObject nearestUsable = usables[0];
+        float minDist = (nearestUsable.transform.position - transform.position).magnitude;
+        foreach (GameObject p in usables)
+        {
+            float dist = (p.GetComponent<Transform>().position - transform.position).magnitude;
+            if (dist < minDist)
+            {
+                minDist = dist;
+                nearestUsable = p;
+            }
+        }
+
+        if(minDist <= nearestUsable.GetComponent<LeverScript>().maxDistance)
+            nearestUsable.GetComponent<LeverScript>().SwitchLever();
     }
 }
