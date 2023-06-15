@@ -11,10 +11,7 @@ public class RocketScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //rb.velocity = new Vector2(0f, velocityMagnitude);
-        //rb.velocity = (transform.rotation * Vector3.forward) * velocityMagnitude;
         rb.velocity = transform.up.normalized * velocityMagnitude;
-        Debug.Log(rb.velocity);
     }
 
 

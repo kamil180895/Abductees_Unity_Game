@@ -13,8 +13,6 @@ public class BulletScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         rb.velocity = transform.right.normalized * velocityMagnitude;
-        Debug.Log(rb.velocity);
-
     }
 
     // Update is called once per frame
