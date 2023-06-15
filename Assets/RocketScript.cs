@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RocketScript : MonoBehaviour
 {
@@ -48,6 +49,9 @@ public class RocketScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(this.gameObject);
-        //jeśli kolizja z graczem to resetuj poziom
+        if(collision.gameObject.tag.Equals("Player")) 
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
