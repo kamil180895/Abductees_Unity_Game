@@ -68,7 +68,7 @@ public class PlayerScript : MonoBehaviour
         {
             playerDirection = PlayerDirection.LEFT;
         }
-        else
+        else if (moveVal > 0 )
         {
             playerDirection = PlayerDirection.RIGHT;
         }

@@ -108,7 +108,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &9053486352570136701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0017249584, y: -0.06899932}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9965501, y: 0.86200136}
   m_EdgeRadius: 0
 --- !u!114 &7479611085433924263
 MonoBehaviour:
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   maxVelocity: 7
-  jumpSpeed: 8
+  jumpSpeed: 10
   bullet: {fileID: 3147580312161954536, guid: 142f6696246329240bd4193879da193e, type: 3}
   maxProjectiles: 3
   gunDelayTime: 0.5
