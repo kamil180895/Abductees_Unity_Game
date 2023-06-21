@@ -29,6 +29,10 @@ public class PlayerScript : MonoBehaviour
     private float timeSinceLastFire;
     public float gunDelayTime;
     GameObject currentGun;
+    
+    //animation
+    public Animator animator;
+    public bool isBlue;
 
     void Start()
     {
@@ -36,6 +40,8 @@ public class PlayerScript : MonoBehaviour
         distToGround = GetComponent<BoxCollider2D>().bounds.extents.y;
         playerDirection = PlayerDirection.RIGHT;
         currentProjetiles = 0;
+        animator = GetComponent<Animator>();
+        animator.SetBool("IsBlue", isBlue);
     }
 
     private void Awake()
@@ -64,13 +70,21 @@ public class PlayerScript : MonoBehaviour
     {
         moveVal = value.Get<float>();
         //Debug.Log(moveVal.x + ", " + moveVal.y);
-        if(moveVal < 0 )
+        if (moveVal < 0 )
         {
             playerDirection = PlayerDirection.LEFT;
+            animator.SetBool("IsMoving", true);
+            transform.localScale = new Vector2(-1, 1);
+        }
+        else if (moveVal > 0)
+        {
+            playerDirection = PlayerDirection.RIGHT;
+            animator.SetBool("IsMoving", true);
+            transform.localScale = new Vector2(1, 1);
         }
         else
         {
-            playerDirection = PlayerDirection.RIGHT;
+            animator.SetBool("IsMoving", false);
         }
     }
 
