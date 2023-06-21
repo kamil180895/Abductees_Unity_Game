@@ -57,10 +57,16 @@ public class PlayerScript : MonoBehaviour
         if(moveVal < 0 )
         {
             playerDirection = PlayerDirection.LEFT;
+            Vector3 scale = gameObject.transform.localScale;
+            scale.x = -1;
+            gameObject.transform.localScale = scale;
         }
-        else
+        else if(moveVal > 0)
         {
             playerDirection = PlayerDirection.RIGHT;
+            Vector3 scale = gameObject.transform.localScale;
+            scale.x = 1;
+            gameObject.transform.localScale = scale;
         }
     }
 
