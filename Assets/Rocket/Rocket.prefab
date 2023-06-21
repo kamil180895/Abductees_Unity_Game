@@ -146,5 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559a40663c6c03c4995d62ea84f52a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directingForceMagnitude: 11
+  directingForceMagnitude: 10
   velocityMagnitude: 4

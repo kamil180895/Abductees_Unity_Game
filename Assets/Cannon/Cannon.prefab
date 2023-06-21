@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 2928469987485125900, guid: d6e1f65f4849049418ce80cd785df1e6, type: 3}
-  interpolationPeriod: 1
-  aggroDistance: 8
+  interpolationPeriod: 1.5
+  aggroDistance: 5
