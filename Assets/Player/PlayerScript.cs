@@ -82,7 +82,7 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("IsMoving", true);
             transform.localScale = new Vector2(1, 1);
         }
-        else if (moveVal > 0 )
+        else
         {
             animator.SetBool("IsMoving", false);
         }
@@ -98,10 +98,33 @@ public class PlayerScript : MonoBehaviour
 
     bool IsGrounded()
     {
-        var ray = Physics2D.Raycast(transform.position, -Vector2.up, distToGround + 0.1f);
-        Debug.Log(ray.collider != null);
-        Debug.DrawRay(transform.position, -Vector2.up * (distToGround + 0.1f), Color.black, 10);
-        return ray.collider != null;
+        BoxCollider2D collider = GetComponent<BoxCollider2D>();
+        float y = transform.position.y;
+        float x = transform.position.x;
+        Vector2 middle = new Vector2(x, y);
+        Vector2 left = new Vector2(x - collider.bounds.extents.x, y);
+        Vector2 right = new Vector2(x + collider.bounds.extents.x, y);
+        collider.enabled = false;
+        RaycastHit2D ray = Physics2D.Raycast(middle, -Vector2.up, distToGround + 0.1f);
+        if (ray.collider != null)
+        {
+            collider.enabled = true;
+            return true;
+        }
+        ray = Physics2D.Raycast(left, -Vector2.up, distToGround + 0.1f);
+        if (ray.collider != null)
+        {         
+            collider.enabled = true;
+            return true;
+        }
+        ray = Physics2D.Raycast(right, -Vector2.up, distToGround + 0.1f);
+        if (ray.collider != null)
+        {
+            collider.enabled = true;
+            return true;
+        }
+        collider.enabled = true;
+        return false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

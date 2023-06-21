@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 705570948038974861, guid: 0c7b1efe95de15c4492562d578809b33, type: 3}
+      propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2284234791665327839, guid: 0c7b1efe95de15c4492562d578809b33, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1787,6 +1791,10 @@ PrefabInstance:
     - target: {fileID: 7595528001903136599, guid: 6f3ef19207cc7ff42987ba7e168c2e8e, type: 3}
       propertyPath: m_Name
       value: Cannon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595528001903136599, guid: 6f3ef19207cc7ff42987ba7e168c2e8e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f3ef19207cc7ff42987ba7e168c2e8e, type: 3}
