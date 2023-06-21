@@ -20,9 +20,17 @@ public class AlienScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x < x_left_boundry || transform.position.x > x_right_boundry)
+        if(transform.position.x < x_left_boundry)
         {
             rb.velocity = -rb.velocity;
+            transform.position = new Vector2(x_left_boundry, transform.position.y);
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        }
+        else if(transform.position.x > x_right_boundry)
+        {
+            rb.velocity = -rb.velocity;
+            transform.position = new Vector2(x_right_boundry, transform.position.y);
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
     }
 
