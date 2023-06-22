@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour
     //gun
     public GameObject bullet;
     public int maxProjectiles;
-    private int currentProjetiles;
+    public int currentProjetiles;
     private float timeSinceLastFire;
     public float gunDelayTime;
     GameObject currentGun;
