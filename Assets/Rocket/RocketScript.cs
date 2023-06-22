@@ -8,6 +8,7 @@ public class RocketScript : MonoBehaviour
     public float directingForceMagnitude;
     public float velocityMagnitude;
     Rigidbody2D rb;
+    public DeathData deathData;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +52,7 @@ public class RocketScript : MonoBehaviour
         Destroy(this.gameObject);
         if(collision.gameObject.tag.Equals("Player")) 
         {
+            deathData.AddDeath();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

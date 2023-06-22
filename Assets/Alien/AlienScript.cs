@@ -9,6 +9,7 @@ public class AlienScript : MonoBehaviour
     public float x_right_boundry;
     public float speed;
     Rigidbody2D rb;
+    public DeathData deathData;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class AlienScript : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
+            deathData.AddDeath();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

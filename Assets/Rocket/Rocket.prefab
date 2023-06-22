@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directingForceMagnitude: 10
   velocityMagnitude: 4
+  deathData: {fileID: 11400000, guid: 084a7e7d3f0629d4b8ef46a45dde381e, type: 2}
