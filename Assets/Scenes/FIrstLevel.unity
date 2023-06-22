@@ -2081,6 +2081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 7707508722788581419, guid: f87770ebf52a3604481aa6c3aaedc215, type: 3}
+      propertyPath: sceneName
+      value: SecondLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 8001505718800151258, guid: f87770ebf52a3604481aa6c3aaedc215, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2578,7 +2582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7595528001903136599, guid: 6f3ef19207cc7ff42987ba7e168c2e8e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f3ef19207cc7ff42987ba7e168c2e8e, type: 3}
