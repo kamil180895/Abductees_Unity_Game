@@ -74,13 +74,13 @@ public class PlayerScript : MonoBehaviour
         {
             playerDirection = PlayerDirection.LEFT;
             animator.SetBool("IsMoving", true);
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(-0.9f, 0.9f);
         }
         else if (moveVal > 0)
         {
             playerDirection = PlayerDirection.RIGHT;
             animator.SetBool("IsMoving", true);
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(0.9f, 0.9f);
         }
         else
         {
