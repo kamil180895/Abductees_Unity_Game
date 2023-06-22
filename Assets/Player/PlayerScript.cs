@@ -173,4 +173,9 @@ public class PlayerScript : MonoBehaviour
         if(minDist <= nearestUsable.GetComponent<LeverScript>().maxDistance)
             nearestUsable.GetComponent<LeverScript>().SwitchLever();
     }
+
+    void OnRestart()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
 }

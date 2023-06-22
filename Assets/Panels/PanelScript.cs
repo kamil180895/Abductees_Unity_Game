@@ -30,8 +30,16 @@ public class PanelScript : MonoBehaviour
     {
         currentSprite++;
         if (currentSprite >= sprites.Length)
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            return;
+        }
         spriteRenderer.sprite = sprites[currentSprite];
         textMesh.text = texts[currentSprite];
+    }
+
+    void OnRestart()
+    {
+        ChangeSprite();
     }
 }
